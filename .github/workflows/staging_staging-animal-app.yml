@@ -23,6 +23,8 @@ jobs:
 
       - name: Build with Maven
         run: mvn clean install
+        env:
+          API_KEY: ${{ secrets.API_KEY }}
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
@@ -51,3 +53,5 @@ jobs:
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_FBF1C9AE33F1412FAD18659F9D596053 }}
           package: '*.jar'
+        env:
+          API_KEY: ${{ secrets.API_KEY }}
