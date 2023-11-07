@@ -16,7 +16,7 @@ public class AnimalController {
         this.service = service;
     }
 
-    final static String SYSTEM_MESSAGE = "";
+    final static String SYSTEM_MESSAGE = "Please answer with information on a animal given from the user";
 
     @GetMapping
     public ChatResponse getAnswer(@RequestParam String answer){

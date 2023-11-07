@@ -71,7 +71,7 @@ public class AnimalService {
                     .block();
             String responseMessage = response.getChoices().get(0).getMessage().getContent();
 
-//            Anvendes til ekstra formål at beregne hvor mange tokens der bruges ved en forspørgsel samt response.
+//
             int tokensUsed = response.getUsage().getTotal_tokens();
             System.out.print("Tokens used: " + tokensUsed);
             System.out.print(". Cost ($0.0015 / 1K tokens) : $" + String.format("%6f",(tokensUsed * 0.0015 / 1000)));
