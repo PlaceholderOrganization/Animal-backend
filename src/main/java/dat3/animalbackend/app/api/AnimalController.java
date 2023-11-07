@@ -6,7 +6,7 @@ import dat3.animalbackend.app.service.AnimalService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/animal")
 @CrossOrigin(origins = "*")
 public class AnimalController {
 
