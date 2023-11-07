@@ -1,4 +1,4 @@
-const SERVER_URL = 'http://localhost:8080/api/';
+const SERVER_URL = 'https://staging-animal-app.azurewebsites.net/api/';
 
 
 document.getElementById('btn-get-answer').addEventListener('click', getInfo);
