@@ -6,7 +6,7 @@ import dat3.animalbackend.app.service.AnimalService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/animal")
 @CrossOrigin(origins = "*")
 public class AnimalController {
 
@@ -16,7 +16,7 @@ public class AnimalController {
         this.service = service;
     }
 
-    final static String SYSTEM_MESSAGE = "Please answer with information on a animal given from the user";
+    final static String SYSTEM_MESSAGE = "Please answer with information on a animal given from the user" + "Please reply in danish";
 
     @GetMapping
     public ChatResponse getAnswer(@RequestParam String answer){
