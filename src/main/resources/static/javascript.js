@@ -1,6 +1,6 @@
-const SERVER_URL = 'https://staging-animal-app.azurewebsites.net/api/';
+const SERVER_URL = 'http://localhost:8080/api/';
 
-
+document.getElementById("btn-get-quiz").addEventListener("click", getQuiz)
 document.getElementById('btn-get-answer').addEventListener('click', getInfo);
 
 
@@ -29,6 +29,24 @@ async function getInfo() {
             }
             return `<a href="${match}" target="_blank">${match}</a>`;
         });
+    }
+}
+
+async function getQuiz() {
+    const URL = `${SERVER_URL}animal/quiz`
+    const spinner = document.getElementById('spinner4');
+    const result4 = document.getElementById('result4');
+    result4.innerText = ""
+    result4.style.color = "black";
+    try {
+        spinner.style.display = "block";
+        const reply = await fetch(URL).then(handleHttpErrors)
+        document.getElementById('result4').innerHTML = reply.answer
+    } catch (e) {
+        result4.style.color = "red";
+        result4.innerText = e.message;
+    } finally {
+        spinner.style.display = "none";
     }
 }
 
