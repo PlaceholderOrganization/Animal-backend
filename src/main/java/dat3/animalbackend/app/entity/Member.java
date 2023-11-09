@@ -2,16 +2,19 @@ package dat3.animalbackend.app.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
-@Setter
 @Getter
-@Entity
+@Setter
 @NoArgsConstructor
-@Table(name="memeber")
-public class Member{
+@AllArgsConstructor
+@Builder
+@Entity
+@Table(name="member")
+
+public class Member {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name= "member_id")
+    @Column(name = "member_id")
     private int member_Id;
 
     @Column(name = "member_name") // Specify the column name for name
