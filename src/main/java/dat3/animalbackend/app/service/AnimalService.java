@@ -4,7 +4,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import dat3.animalbackend.app.dto.AnimalRequest;
 import dat3.animalbackend.app.dto.AnimalResponse;
 import dat3.animalbackend.app.dto.ChatResponse;
-import dat3.animalbackend.app.entity.Animal;
 import dat3.animalbackend.app.repository.AnimalRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

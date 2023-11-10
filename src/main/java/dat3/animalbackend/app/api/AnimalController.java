@@ -1,12 +1,8 @@
 package dat3.animalbackend.app.api;
 
-
 import dat3.animalbackend.app.dto.ChatResponse;
-import dat3.animalbackend.app.entity.Animal;
 import dat3.animalbackend.app.service.AnimalService;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/animal")
@@ -32,7 +28,5 @@ public class AnimalController {
         String animals = service.getAnimals();
         return service.makeRequest("quiz",QUIZ_MESSAGE+animals+" and format your response so it fits nicely in a p tag in html");
     }
-
-
 
 }
