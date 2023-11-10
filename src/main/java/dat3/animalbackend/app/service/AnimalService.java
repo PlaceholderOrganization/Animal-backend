@@ -4,8 +4,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import dat3.animalbackend.app.dto.AnimalRequest;
 import dat3.animalbackend.app.dto.AnimalResponse;
 import dat3.animalbackend.app.dto.ChatResponse;
+import dat3.animalbackend.app.repository.AnimalRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -16,16 +18,24 @@ import org.springframework.web.reactive.function.client.WebClientResponseExcepti
 import org.springframework.web.server.ResponseStatusException;
 
 import java.net.URI;
+import java.util.List;
 
 @Service
 public class AnimalService {
+
+    @Autowired
+    AnimalRepository animalRepository;
+
+    public AnimalService(AnimalRepository animalRepository) {
+        this.animalRepository = animalRepository;
+    }
     public static final Logger logger = LoggerFactory.getLogger(AnimalService.class);
 
     @Value("${API_KEY}")
     private String API_KEY;
 
     public final static String URL = "https://api.openai.com/v1/chat/completions";
-    public final static String MODEL = "gpt-3.5-turbo";
+    public final static String MODEL = "gpt-4";
     public final static double TEMPERATURE = 0.8;
     public final static int MAX_TOKEN = 300;
     public final static double FREQUENCY_PENALTY = 0.0;
@@ -99,4 +109,9 @@ public class AnimalService {
         }
     }
 
+    public String getAnimals() {
+        List<String> animals = animalRepository.getAllDistinctByName();
+        String str = animals.toString();
+        return str;
+    }
 }
