@@ -4,11 +4,12 @@ import { setActiveLink, loadHtml, renderHtml } from "./utils.js";
 
 // import { initSomething } from "./js/something.js";
 
+import {initZooMap} from "pages/zoo-map/zoo-map.js";
 window.addEventListener("load", async () => {
 
     // const templateSomething = await loadHtml("something.html");
     const templateNotFound = await loadHtml("./pages/notfound/notFound.html");
-
+    const templateZooMap = await loadHtml("./pages/zoo-map/zoo-map.html");
 
     const router = new Navigo("/", { hash: true });
     // Not nice but works. Makes router globally available
@@ -29,6 +30,10 @@ window.addEventListener("load", async () => {
             "/signup": () => {
                 renderHtml(templateSignup, "content")
                 initSignup()
+            },
+            "/zoo-map": ()=> {
+                renderHtml(templateZooMap, "content")
+                initZooMap()
             }
         })
         .notFound(() => {
