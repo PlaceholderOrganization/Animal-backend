@@ -15,6 +15,7 @@ public class ChatResponse {
     String answer;
     List<Map<String, String>> messages;
 
+
     public ChatResponse(String answer){
         this.answer = answer;
     }
