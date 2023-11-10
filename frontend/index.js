@@ -4,7 +4,7 @@ import { setActiveLink, loadHtml, renderHtml } from "./utils.js";
 
 // import { initSomething } from "./js/something.js";
 
-import {initZooMap} from "pages/zoo-map/zoo-map.js";
+import {initZooMap} from "./pages/zoo-map/zoo-map.js";
 window.addEventListener("load", async () => {
 
     // const templateSomething = await loadHtml("something.html");
