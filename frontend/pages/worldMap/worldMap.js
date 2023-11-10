@@ -1,10 +1,14 @@
 import {API_URL} from "../../settings.js"
-const URL = API_URL + "/worldMap"
+const URL = API_URL + "/worldmap"
 
 import { sanitizeStringWithTableRows } from "../../utils.js";
 
-export async function initWorldMap(){}
-
+export async function initWorldMap(){
+  if (!document.getElementById('map')) {
+    console.error('Map element not found!');
+    return;
+  }
+}
 //Init map and starting point, zoom level when map loaded
 var map = L.map('map').setView([55.645533, 12.624538], 10);
 
@@ -100,11 +104,6 @@ function zoomToFeature(e) {
   map.fitBounds(e.target.getBounds());
 }
 
-// Define your GeoJSON layer and add it to the map
-// var geojsonLayer = L.geoJSON(geojsonData, {
-//   onEachFeature: onEachFeature
-// }).addTo(map);
-
 
 // Function to be called on each feature
 function onEachFeature(feature, layer) {
@@ -149,6 +148,4 @@ fetch('./countries.json')
     });
   })
   .catch(error => console.error('Error loading the GeoJSON data:', error));
-
-
 

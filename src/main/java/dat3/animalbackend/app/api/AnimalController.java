@@ -30,7 +30,7 @@ public class AnimalController {
     }
 
 
-     @GetMapping("/worldMap")
+     @GetMapping("/worldmap")
      public ChatResponse getAnimalFromWorldMap(@RequestParam String worldAnimals){
             return service.makeRequest(worldAnimals, COUNTRY_MESSAGE);
      }
