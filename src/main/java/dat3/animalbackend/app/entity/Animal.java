@@ -36,4 +36,8 @@ public class Animal {
         this.diet = diet;
         this.behaviour = behaviour;
     }
+
+    public Animal(String name) {
+        this.name=name;
+    }
 }

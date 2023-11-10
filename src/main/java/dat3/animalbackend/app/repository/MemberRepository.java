@@ -7,22 +7,3 @@ import org.springframework.data.jpa.repository.Query;
 public interface MemberRepository extends JpaRepository<Member, Integer> {
     Member findByNameAndPassword(String memberName, String memberPassword);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
