@@ -23,10 +23,18 @@ window.addEventListener("load", async () => {
             "/": () => document.getElementById("content").innerHTML = `
                 <h1>Home</h1>
                 <img style="width: 50%;max-width: 150px;margin-top:1em;" src="./img/logo.png" alt="Logo">
-        `,
-        "/signup": () => {
-            renderHtml(templateSignup, "content")
-            initSignup()
-        }
+            `,
+            "/signup": () => {
+                renderHtml(templateSignup, "content")
+                initSignup()
+            }
         })
+        .notFound(() => {
+            renderHtml(templateNotFound, "content")
+        })
+        .resolve();   
 });
+
+window.onerror = function (errorMsg, url, lineNumber, column, errorObj) {
+    alert('Error: ' + errorMsg + ' Script: ' + url + ' Line: ' + lineNumber + ' Column: ' + column + ' StackTrace: ' +  errorObj);
+}
