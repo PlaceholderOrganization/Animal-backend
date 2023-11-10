@@ -7,6 +7,8 @@ import { setActiveLink, loadHtml, renderHtml } from "./utils.js";
 window.addEventListener("load", async () => {
 
     // const templateSomething = await loadHtml("something.html");
+    const templateNotFound = await loadHtml("./pages/notfound/notFound.html");
+
 
     const router = new Navigo("/", { hash: true });
     // Not nice but works. Makes router globally available
@@ -21,8 +23,8 @@ window.addEventListener("load", async () => {
         })
         .on({
             "/": () => document.getElementById("content").innerHTML = `
-                <h1>Home</h1>
-                <img style="width: 50%;max-width: 150px;margin-top:1em;" src="./img/logo.png" alt="Logo">
+                <h1>Velkommen til OpenAnimal</h1>
+                <img style="width: 50%;max-width: 350px;margin-top:1em;" src="./img/Logo.png" alt="Logo">
             `,
             "/signup": () => {
                 renderHtml(templateSignup, "content")
