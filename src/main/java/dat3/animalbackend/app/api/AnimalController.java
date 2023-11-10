@@ -3,7 +3,10 @@ package dat3.animalbackend.app.api;
 
 import dat3.animalbackend.app.dto.ChatResponse;
 import dat3.animalbackend.app.service.AnimalService;
+import lombok.Getter;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/animal")
@@ -18,8 +21,17 @@ public class AnimalController {
 
     final static String SYSTEM_MESSAGE = "Please answer with information on an animal given from the user" + "Please reply in danish";
 
+    final static String COUNTRY_MESSAGE = "Please answer in danish with animals living in the country given from the user";
+
     @GetMapping
-    public ChatResponse getAnswer(@RequestParam String answer){
+    public ChatResponse getAnswer(@RequestParam String answer) {
         return service.makeRequest(answer, SYSTEM_MESSAGE);
     }
+
+     @GetMapping("/worldMap")
+     public ChatResponse getAnimalFromWorldMap(@RequestParam String worldAnimals){
+            return service.makeRequest(worldAnimals, COUNTRY_MESSAGE);
+     }
+
+
 }
