@@ -17,7 +17,6 @@ export function initZooMap() {
 const getZooInfo = async (animalId) => {
     const URL = `${API_URL}?answer=${animalId}`;
     console.log(animalId);
-    // You can perform additional actions here, such as making an API request with the URL.
 
     const infoBox = document.getElementById("info-box")
     infoBox.innerText = ""
@@ -29,4 +28,13 @@ const getZooInfo = async (animalId) => {
         infoBox.style.color = "red";
         infoBox.innerText = e.message;
     } 
-};
+}
+
+async function handleHttpErrors(res) {
+    if (!res.ok) {
+        const errorResponse = await res.json();
+        const msg = errorResponse.message ? errorResponse.message : "No error details provided"
+        throw new Error(msg)
+    }
+    return res.json()
+}
