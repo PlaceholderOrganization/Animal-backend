@@ -16,7 +16,7 @@ Initially the project was divided into a frontend repo and a backend repo. For c
 
 The project serves as an experimental platform for playing around with the OpenAI API to integrate AI services into a web app. 
 
-### Branching Strategy (Short explanation)
+### Branching Strategy
 Our branching strategy incorporates several key elements commonly used in collaborative software development.
 
 We use the <b>'master'</b> branch as our production-ready codebase. For new developments, we create feature branches. Once a feature is complete, we initiate a pull request to merge it into the <b>'staging'</b> branch. This triggers automated builds and tests via GitHub Actions, and if successful, the changes are deployed to the Azure Web App service for staging.
