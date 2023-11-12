@@ -31,3 +31,5 @@ The <b>'staging'</b> branch acts as our pre-production environment, allowing us 
 5. <b>Continuous Integration (CI) with GitHub Actions</b>
 6. <b>Deployment with Azure Web App Service</b>
 7. <b>Merging Staging into Master</b>
+
+.
