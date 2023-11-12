@@ -1,0 +1,17 @@
+#zoo-map-clickable {
+    float: left;
+    border: 2px solid #91D6AC;
+}
+
+#info-box {
+    border: 2px solid #91D6AC;
+    height: 100%; 
+    margin-left: 50px; /* Adjust this margin as needed to create space between the map and info box */
+    padding: 30px; /* Add some padding for content spacing */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #FFFFFF;
+    
+}
