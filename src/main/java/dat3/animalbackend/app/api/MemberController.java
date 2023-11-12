@@ -11,10 +11,9 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.naming.AuthenticationException;
 
-@CrossOrigin
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/api/members")
-
 public class MemberController {
     private final MemberService memberService;
 
