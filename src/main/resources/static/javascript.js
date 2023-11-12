@@ -4,8 +4,8 @@ document.getElementById("btn-get-quiz").addEventListener("click", getQuiz)
 document.getElementById('btn-get-answer').addEventListener('click', getInfo);
 
 
- async function getInfo() {
-    const URL = `${SERVER_URL}animal?answer= + ${document.getElementById('the-question').value}`
+async function getInfo() {
+    const URL = `${SERVER_URL}?answer= + ${document.getElementById('the-question').value}`
     const spinner = document.getElementById('spinner3');
     const result3 = document.getElementById('result3');
     result3.innerText = ""
