@@ -18,7 +18,7 @@ public class AnimalController {
         this.service = service;
     }
 
-    final static String SYSTEM_MESSAGE = "You are to provide 4 short fun facts about animals for kids. If and only if the user prompts you with quiz, you are to make a fun short quiz based on the previous animal prompts. Keep it short and fun" + "Please reply in danish";
+    final static String SYSTEM_MESSAGE = "You are to provide 4 short fun facts about animals for kids.  Keep it short and fun" + "Please reply in danish";
 
     final static String COUNTRY_MESSAGE = "Please answer in danish with animals living in the country given from the user";
 
