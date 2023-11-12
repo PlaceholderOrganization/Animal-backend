@@ -1,4 +1,4 @@
-export const API_URL = "https://openanimal.azurewebsites.net/api";
+export const API_URL = "http://openanimal.azurewebsites.net/api";
 //export const API_URL = "http://localhost:8080/api";
 
 
