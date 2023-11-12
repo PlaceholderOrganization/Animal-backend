@@ -14,7 +14,7 @@ export async function initQuiz() {
 }
     
 async function getQuiz() {
-    const URL = `${API_URL}/animal/quiz`
+    const URL = `${API_URL}/quiz`
     const spinner = document.getElementById('spinner4');
     const result4 = document.getElementById('result4');
     result4.innerText = ""
