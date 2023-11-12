@@ -35,7 +35,7 @@ window.addEventListener("load", async () => {
 
             "/worldmap": () => {
                 renderHtml(templateWorldMap, "content")
-                initWorldMap()
+                setTimeout(() => initWorldMap(), 0);
             }
         })
         .notFound(() => {

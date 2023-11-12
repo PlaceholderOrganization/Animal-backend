@@ -3,6 +3,11 @@ const URL = API_URL + "/worldmap"
 
 import { sanitizeStringWithTableRows } from "../../utils.js";
 
+document.addEventListener('DOMContentLoaded', function() {
+  // Your code here
+  initWorldMap();
+});
+
 export async function initWorldMap(){
   if (!document.getElementById('map')) {
     console.error('Map element not found!');
