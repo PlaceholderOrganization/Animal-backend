@@ -3,13 +3,16 @@ import "./navigo.js";
 import { setActiveLink, loadHtml, renderHtml } from "./utils.js";
 
 // import { initSomething } from "./js/something.js";
+import { initQuiz } from "./pages/quiz/quiz.js";
 
 import {initZooMap} from "./pages/zoo-map/zoo-map.js";
 window.addEventListener("load", async () => {
 
     // const templateSomething = await loadHtml("something.html");
     const templateNotFound = await loadHtml("./pages/notfound/notFound.html");
+    const templateQuiz = await loadHtml("./pages/quiz/quiz.html")
     const templateZooMap = await loadHtml("./pages/zoo-map/zoo-map.html");
+
 
     const router = new Navigo("/", { hash: true });
     // Not nice but works. Makes router globally available
@@ -30,6 +33,11 @@ window.addEventListener("load", async () => {
             "/signup": () => {
                 renderHtml(templateSignup, "content")
                 initSignup()
+            },
+
+            "/quiz": () => {
+                renderHtml(templateQuiz, "content")
+                initQuiz()
             },
             "/zoo-map": ()=> {
                 renderHtml(templateZooMap, "content")

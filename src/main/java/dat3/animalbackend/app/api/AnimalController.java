@@ -38,6 +38,6 @@ public class AnimalController {
     @GetMapping("/quiz")
     public ChatResponse getQuiz() {
         String animals = service.getAnimals();
-        return service.makeRequest("quiz",QUIZ_MESSAGE+animals+" and format your response so it fits nicely in a p tag in html");
+        return service.makeRequest("quiz",QUIZ_MESSAGE+animals+" and always format your response into a json array like this: question: 'What is the capital of France?', answers: ['Paris', 'London', 'Berlin', 'Rome'], correct: 'Paris'. Limit your response to 2 questions");
     }
 }
